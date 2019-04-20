@@ -11,7 +11,7 @@ const bcryptSalt = 10;
 
 router.post("/signup", (req, res, next) => {
   const { fullName, email, originalPassword } = req.body;
-
+  console.log(req.body);
   if(fullName == '' || email == '' || originalPassword.match(/[0-9]/) === null){
     // send error JSON if any of the fields is empty or password doesn't contain a number
     res.status(401).json({ message: "All fields need to be filled and password must contain a number." })
